@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Threshold — Kyle Warren</title>
+<meta name="description" content="Three quick questions, then the eight spokes of your life. In five minutes, see which areas are strong, which are short, and the one edge worth working.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Threshold — Map Your Wheel | Kyle Warren">
+<meta property="og:description" content="Three quick questions, then the eight spokes of your life. In five minutes, see which areas are strong, which are short, and the one edge worth working.">
+<meta property="og:image" content="assets/img/img-27ad0e8b07.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Threshold — Map Your Wheel | Kyle Warren">
+<meta name="twitter:description" content="Three quick questions, then the eight spokes of your life. In five minutes, see which areas are strong, which are short, and the one edge worth working.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ember:#8B2E1F; --ember-light:#C9583E; --obsidian:#1C1C1C; --bronze:#9B7B3E;
+    --bronze-light:#C9A668; --forest:#2E4031; --bone:#F2EBDC; --paper:#FAF7F0;
+    --graphite:#3A3A3A; --stone:#857E70;
+    --display:'Cinzel',serif; --accent:'Cormorant Garamond',serif; --body:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--obsidian);color:var(--bone);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .screen{display:none;min-height:100vh;animation:fade .5s ease}
+  .screen.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.42em;text-transform:uppercase;font-size:11px;color:var(--bronze-light)}
+  .quote{font-family:var(--accent);font-style:italic;font-size:1.35rem;color:var(--stone)}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+
+  /* ============ HERO ============ */
+  #hero{background:radial-gradient(120% 72% at 50% 124%, rgba(139,46,31,.30) 0%, rgba(139,46,31,.07) 38%, transparent 64%), linear-gradient(180deg,#FAF7F0 0%, #F2EBDC 100%);color:var(--graphite);display:flex;align-items:center;justify-content:center;text-align:center}
+  .hero-inner{padding:74px 24px 92px}
+  .hero-logo{width:min(272px,64vw);margin:0 auto 24px;display:block;filter:drop-shadow(0 12px 30px rgba(28,28,28,.16))}
+  .flame{width:74px;filter:drop-shadow(0 6px 26px rgba(201,88,62,.55));margin-bottom:30px}
+  #hero .eyebrow{display:block;margin-bottom:20px;color:var(--bronze)}
+  .threshold-title{font-family:var(--display);font-weight:700;letter-spacing:.30em;text-indent:.30em;font-size:clamp(2rem,7.5vw,3.3rem);line-height:1.05;color:var(--obsidian)}
+  .hero-rule{height:1px;width:108px;background:var(--bronze);margin:24px auto;opacity:.7}
+  .hero-h{font-family:var(--accent);font-style:italic;font-weight:600;font-size:clamp(1.6rem,5.5vw,2.4rem);color:var(--ember);max-width:520px;margin:0 auto 16px}
+  .hero-p{color:#5b554a;max-width:480px;margin:0 auto 36px;font-size:1.02rem}
+  .btn{font-family:var(--display);font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:13px;border:none;cursor:pointer;padding:18px 42px;border-radius:2px;background:linear-gradient(180deg,var(--ember-light),var(--ember));color:var(--bone);transition:transform .15s ease, box-shadow .25s ease;box-shadow:0 8px 30px rgba(139,46,31,.4)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(201,88,62,.5)}
+  .btn:focus-visible{outline:2px solid var(--bronze-light);outline-offset:4px}
+  .btn-ghost{background:transparent;border:1px solid var(--bronze);color:var(--bronze-light);box-shadow:none}
+  .btn-ghost:hover{background:rgba(155,123,62,.12);box-shadow:none}
+  .meta{margin-top:26px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);font-family:var(--display);font-weight:500}
+
+  /* ============ AUDIT ============ */
+  .audit{background:var(--paper);color:var(--graphite);min-height:100vh}
+  .topbar{position:sticky;top:0;z-index:20;background:var(--obsidian);padding:16px 0 14px}
+  .topbar .wrap{display:flex;flex-direction:column;gap:12px}
+  .tb-row{display:flex;align-items:center;justify-content:space-between}
+  .tb-mark{display:flex;align-items:center;gap:10px}
+  .tb-mark img{width:20px}
+  .tb-mark span{font-family:var(--display);font-weight:600;letter-spacing:.24em;font-size:11px;color:var(--bone)}
+  .tb-count{font-family:var(--display);font-size:11px;letter-spacing:.18em;color:var(--bronze-light)}
+  .ascent{display:flex;gap:6px}
+  .ascent .step{flex:1;height:4px;background:rgba(242,235,220,.16);border-radius:2px;overflow:hidden;position:relative}
+  .ascent .step i{position:absolute;inset:0;background:linear-gradient(90deg,var(--ember),var(--ember-light));width:0;transition:width .4s ease}
+  .ascent .step.done i{width:100%}
+  .ascent .step.cur i{width:100%;opacity:.55}
+
+  .phase-head{padding:54px 0 8px;text-align:center}
+  .phase-num{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.4em;color:var(--bronze)}
+  .phase-name{font-family:var(--display);font-weight:700;letter-spacing:.22em;font-size:clamp(1.8rem,6vw,2.6rem);color:var(--obsidian);margin:10px 0 6px}
+  .phase-line{font-family:var(--accent);font-style:italic;font-size:1.18rem;color:var(--ember);max-width:540px;margin:0 auto 4px}
+  .phase-sub{color:var(--stone);font-size:.92rem;max-width:520px;margin:8px auto 0}
+
+  .q{padding:30px 0;border-bottom:1px solid rgba(155,123,62,.28)}
+  .q:last-of-type{border-bottom:none}
+  .q-text{font-size:1.12rem;font-weight:500;color:var(--graphite);margin-bottom:20px}
+  .q-text b{color:var(--ember);font-family:var(--display);font-size:.8rem;letter-spacing:.15em;display:inline-block;margin-right:8px;vertical-align:middle}
+  .scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  .opt{border:1px solid rgba(28,28,28,.18);background:transparent;border-radius:3px;padding:16px 4px;cursor:pointer;font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--graphite);transition:all .14s ease}
+  .opt:hover{border-color:var(--ember);color:var(--ember)}
+  .opt.sel{background:linear-gradient(180deg,var(--ember-light),var(--ember));color:var(--bone);border-color:var(--ember);box-shadow:0 6px 18px rgba(139,46,31,.28)}
+  .opt:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+  .scale-labels{display:flex;justify-content:space-between;margin-top:10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone)}
+
+  .navrow{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:36px 0 80px}
+  .nudge{color:var(--ember);font-size:.9rem;font-weight:500;opacity:0;transition:opacity .2s;min-height:1.2em}
+  .nudge.show{opacity:1}
+  .link-back{background:none;border:none;color:var(--stone);font-family:var(--display);font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;font-weight:600}
+  .link-back:hover{color:var(--ember)}
+
+  /* ============ GATE ============ */
+  #gate{background:radial-gradient(120% 70% at 50% 0%, rgba(139,46,31,.4) 0%, transparent 60%), var(--obsidian);display:flex;align-items:center;justify-content:center;text-align:center}
+  .gate-inner{padding:90px 24px;max-width:480px}
+  .gate-inner .flame{width:52px;margin-bottom:24px}
+  .gate-h{font-family:var(--display);font-weight:700;letter-spacing:.18em;font-size:clamp(1.5rem,5vw,2.1rem);margin:8px 0 12px}
+  .gate-p{color:var(--stone);margin-bottom:32px}
+  .field{text-align:left;margin-bottom:18px}
+  .field label{display:block;font-family:var(--display);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-light);margin-bottom:8px}
+  .field input{width:100%;padding:15px 16px;background:rgba(242,235,220,.06);border:1px solid rgba(155,123,62,.4);border-radius:3px;color:var(--bone);font-family:var(--body);font-size:1rem}
+  .field input:focus{outline:none;border-color:var(--ember-light);background:rgba(242,235,220,.1)}
+  .field input::placeholder{color:#6b655a}
+  .gate-note{font-size:11px;color:var(--stone);margin-top:18px;letter-spacing:.04em}
+  .err{color:var(--ember-light);font-size:.85rem;min-height:1.1em;margin-top:6px;text-align:left}
+
+  /* ============ RESULTS ============ */
+  #results{background:linear-gradient(180deg,#141414,#1C1C1C)}
+  .res-hero{text-align:center;padding:72px 0 20px;background:radial-gradient(120% 90% at 50% 0%, rgba(139,46,31,.5) 0%, transparent 58%)}
+  .res-eye{display:block;margin-bottom:18px}
+  .res-greet{color:var(--stone);font-family:var(--accent);font-style:italic;font-size:1.3rem;margin-bottom:6px}
+  .score-big{font-family:var(--display);font-weight:700;font-size:clamp(4.5rem,20vw,8rem);line-height:1;color:var(--bone);text-shadow:0 0 50px rgba(201,88,62,.5);letter-spacing:.02em}
+  .score-big span{font-size:.35em;color:var(--bronze-light);vertical-align:super}
+  .tier{font-family:var(--display);font-weight:700;letter-spacing:.34em;font-size:1.05rem;color:var(--ember-light);margin-top:6px}
+  .tier-read{font-family:var(--accent);font-style:italic;font-size:1.3rem;color:var(--bone);max-width:500px;margin:16px auto 0}
+
+  .res-section{padding:48px 0}
+  .res-label{font-family:var(--display);font-weight:600;letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:var(--bronze-light);text-align:center;margin-bottom:8px}
+  .res-h{font-family:var(--display);font-weight:700;letter-spacing:.16em;font-size:1.5rem;text-align:center;color:var(--bone);margin-bottom:34px}
+
+  /* ascent bars */
+  .bars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end;height:260px;margin-bottom:10px}
+  .bar{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar-track{width:100%;max-width:88px;height:200px;background:rgba(242,235,220,.07);border:1px solid rgba(155,123,62,.22);border-radius:3px;display:flex;align-items:flex-end;overflow:hidden;position:relative}
+  .bar-fill{width:100%;background:linear-gradient(180deg,var(--ember-light),var(--ember));height:0;transition:height 1.1s cubic-bezier(.2,.7,.3,1);border-radius:0 0 2px 2px}
+  .bar.gap .bar-fill{background:linear-gradient(180deg,#5a5249,#3a352e)}
+  .bar.gap .bar-track{border-color:var(--bronze)}
+  .bar-pct{font-family:var(--display);font-weight:700;font-size:1.1rem;color:var(--bone);margin-top:14px}
+  .bar-num{font-family:var(--display);font-size:10px;letter-spacing:.2em;color:var(--bronze);margin-bottom:8px}
+  .bar-name{font-family:var(--display);font-weight:600;letter-spacing:.12em;font-size:10px;text-transform:uppercase;color:var(--stone);margin-top:4px;text-align:center;line-height:1.3}
+  .gaptag{display:inline-block;font-family:var(--display);font-weight:700;font-size:8px;letter-spacing:.18em;background:var(--bronze);color:var(--obsidian);padding:2px 6px;border-radius:2px;margin-top:6px}
+
+  .diag{background:rgba(242,235,220,.04);border:1px solid rgba(155,123,62,.28);border-left:3px solid var(--ember);border-radius:4px;padding:30px 28px;margin-bottom:18px}
+  .diag.strength{border-left-color:var(--bronze)}
+  .diag-k{font-family:var(--display);font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--ember-light);margin-bottom:6px}
+  .diag.strength .diag-k{color:var(--bronze-light)}
+  .diag-name{font-family:var(--display);font-weight:700;letter-spacing:.14em;font-size:1.35rem;color:var(--bone);margin-bottom:12px}
+  .diag-body{color:#cfc7b6;font-size:1.02rem}
+
+  /* CTA */
+  .cta{background:radial-gradient(120% 90% at 50% 120%, rgba(139,46,31,.5) 0%, transparent 60%), #161616;border-radius:6px;padding:56px 34px;text-align:center;border:1px solid rgba(155,123,62,.25);margin-top:14px}
+  .cta .flame{width:46px;margin-bottom:20px;filter:drop-shadow(0 4px 18px rgba(201,88,62,.5))}
+  .cta-eye{display:block;margin-bottom:14px}
+  .cta-h{font-family:var(--display);font-weight:700;letter-spacing:.14em;font-size:clamp(1.6rem,5vw,2.2rem);color:var(--bone);margin-bottom:18px}
+  .cta-p{color:#cfc7b6;max-width:520px;margin:0 auto 16px;font-size:1.05rem}
+  .cta-list{list-style:none;max-width:420px;margin:18px auto 32px;text-align:left}
+  .cta-list li{padding:9px 0 9px 28px;position:relative;color:var(--bone);font-size:.98rem;border-bottom:1px solid rgba(155,123,62,.18)}
+  .cta-list li:last-child{border-bottom:none}
+  .cta-list li::before{content:"";position:absolute;left:4px;top:16px;width:8px;height:8px;background:var(--ember-light);transform:rotate(45deg)}
+  .cta-close{font-family:var(--accent);font-style:italic;font-size:1.25rem;color:var(--stone);margin-top:30px}
+  .res-foot{text-align:center;padding:40px 0 70px}
+  .restart{background:none;border:none;color:var(--stone);font-family:var(--display);font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;font-weight:600}
+  .restart:hover{color:var(--ember-light)}
+
+  @media(max-width:560px){
+    .scale{gap:5px}.opt{padding:14px 2px;font-size:.95rem}
+    .bars{gap:7px;height:230px}.bar-track{height:172px}
+    .scale-labels{font-size:9px}
+  }
+
+  /* ============ QUALIFY ============ */
+  .kicker{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.4em;color:var(--bronze)}
+  .qual-q{padding:26px 0;border-bottom:1px solid rgba(155,123,62,.28)}
+  .qual-q:last-of-type{border-bottom:none}
+  .qual-lead{font-family:var(--display);font-size:.72rem;letter-spacing:.24em;color:var(--ember);margin-bottom:10px}
+  .qual-text{font-size:1.16rem;font-weight:600;color:var(--obsidian);margin-bottom:18px;line-height:1.4}
+  .qopts{display:flex;flex-direction:column;gap:10px}
+  .qopt{text-align:left;border:1px solid rgba(28,28,28,.16);background:#fff;border-radius:4px;padding:15px 18px;cursor:pointer;font-family:var(--body);font-size:1rem;color:var(--graphite);transition:all .14s ease;display:flex;align-items:center;gap:14px;line-height:1.35}
+  .qopt:hover{border-color:var(--ember);color:var(--ember)}
+  .qopt .dot{width:15px;height:15px;border-radius:50%;border:2px solid rgba(28,28,28,.28);flex:0 0 auto;transition:all .14s ease}
+  .qopt.sel{background:linear-gradient(180deg,var(--ember-light),var(--ember));color:var(--bone);border-color:var(--ember);box-shadow:0 6px 18px rgba(139,46,31,.26)}
+  .qopt.sel .dot{border-color:var(--bone);background:var(--bone)}
+  .qopt:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+
+  /* area mini-headers inside the wheel steps */
+  .area-head{margin:34px 0 6px;padding-top:6px}
+  .area-head:first-child{margin-top:8px}
+  .area-k{font-family:var(--display);font-weight:700;letter-spacing:.26em;font-size:.72rem;color:var(--bronze)}
+  .area-name{font-family:var(--display);font-weight:700;letter-spacing:.14em;font-size:1.5rem;color:var(--obsidian);margin:6px 0 4px}
+  .area-frame{font-family:var(--accent);font-style:italic;font-size:1.14rem;color:var(--ember);max-width:560px}
+  .q.tight{padding:20px 0}
+
+  /* ============ WHEEL (results) ============ */
+  .wheel-wrap{display:flex;justify-content:center;padding:6px 0 4px}
+  #wheelSvg{width:min(430px,94vw);height:auto;overflow:visible}
+  #wheelSvg .wheel-data{opacity:0;transform:scale(.25);transform-origin:180px 180px;transition:opacity .7s ease, transform .95s cubic-bezier(.2,.7,.3,1)}
+  #wheelSvg.in .wheel-data{opacity:1;transform:scale(1)}
+  .wheel-legend{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:8px;font-family:var(--display);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+  .wheel-legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:middle}
+  .lg-str i{background:var(--ember-light)} .lg-gap i{background:var(--bronze)}
+
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section id="hero" class="screen active">
+  <div class="hero-inner">
+    <img class="hero-logo" src="assets/img/img-27ad0e8b07.png" alt="Kyle Warren — Modern Initiator">
+    <span class="eyebrow">Fire · Sovereignty · Brotherhood</span>
+    <h1 class="threshold-title">THE THRESHOLD</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-h">Where do you actually stand?</p>
+    <p class="hero-p">Three quick questions, then the eight spokes of your life &mdash; the full Wheel. In five minutes you&rsquo;ll see which areas are strong, which are short, and the one edge worth a real conversation with Kyle.</p>
+    <button class="btn" onclick="startQualify()">Step in</button>
+    <div class="meta">3 + 16 questions · ~5 minutes · bring the truth</div>
+  </div>
+</section>
+
+<!-- ===== QUALIFY (3 questions) ===== -->
+<section id="qualify" class="screen audit">
+  <div class="topbar">
+    <div class="wrap">
+      <div class="tb-row">
+        <div class="tb-mark"><img src="assets/img/img-71181a8c48.png" alt="" loading="lazy" decoding="async"><span>THE THRESHOLD</span></div>
+        <div class="tb-count">STEP 1 · THE FIT</div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="phase-head">
+      <div class="phase-num">BEFORE WE BEGIN</div>
+      <h2 class="phase-name">THE FIT</h2>
+      <p class="phase-line">“Three questions. Answer straight &mdash; this decides whether the rest is worth your time.”</p>
+    </div>
+    <div id="qualList"></div>
+    <div class="navrow">
+      <button class="link-back" onclick="go('hero')">&larr; Back</button>
+      <div class="nudge" id="qualNudge">Answer all three to continue.</div>
+      <button class="btn" onclick="submitQualify()">Continue to the wheel</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHEEL ASSESSMENT ===== -->
+<section id="audit" class="screen audit">
+  <div class="topbar">
+    <div class="wrap">
+      <div class="tb-row">
+        <div class="tb-mark"><img src="assets/img/img-71181a8c48.png" alt="" loading="lazy" decoding="async"><span>THE THRESHOLD</span></div>
+        <div class="tb-count" id="tbCount">PART 1 OF 4</div>
+      </div>
+      <div class="ascent" id="ascent">
+        <div class="step"><i></i></div><div class="step"><i></i></div>
+        <div class="step"><i></i></div><div class="step"><i></i></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="phase-head">
+      <div class="phase-num" id="phaseNum">PART 01</div>
+      <h2 class="phase-name" id="phaseName">THE WHEEL</h2>
+      <p class="phase-line" id="phaseLine"></p>
+      <p class="phase-sub" id="phaseSub"></p>
+    </div>
+    <div id="qList"></div>
+    <div class="navrow">
+      <button class="link-back" id="backBtn" onclick="prevPhase()">&larr; Back</button>
+      <div class="nudge" id="nudge">Answer every line before you move forward.</div>
+      <button class="btn" id="nextBtn" onclick="nextPhase()">Continue</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GATE ===== -->
+<section id="gate" class="screen">
+  <div class="gate-inner">
+    <img class="flame" src="assets/img/img-71181a8c48.png" alt="" loading="lazy" decoding="async">
+    <span class="eyebrow">Your wheel is drawn</span>
+    <h2 class="gate-h">SEE WHERE YOU STAND</h2>
+    <p class="gate-p">Your Wheel of Life and the reading beneath it are ready. Tell me who&rsquo;s looking at them.</p>
+    <div class="field">
+      <label for="fname">First name</label>
+      <input id="fname" type="text" placeholder="Your name" autocomplete="given-name">
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@email.com" autocomplete="email">
+    </div>
+    <div class="err" id="gateErr"></div>
+    <button class="btn" style="width:100%;margin-top:8px" onclick="reveal()">Reveal my wheel</button>
+    <p class="gate-note">No spam. Your wheel and an invitation to a call with Kyle &mdash; nothing else.</p>
+  </div>
+</section>
+
+<!-- ===== RESULTS ===== -->
+<section id="results" class="screen">
+  <div class="res-hero">
+    <div class="wrap">
+      <span class="eyebrow res-eye">Your Wheel of Life</span>
+      <p class="res-greet" id="greet"></p>
+      <div class="score-big" id="scoreBig">0<span>%</span></div>
+      <div class="tier" id="tierWord"></div>
+      <p class="tier-read" id="tierRead"></p>
+    </div>
+  </div>
+
+  <div class="res-section">
+    <div class="wrap">
+      <div class="res-label">The Wheel</div>
+      <h3 class="res-h">HOW ROUND IS YOUR LIFE RIGHT NOW</h3>
+      <div class="wheel-wrap"><div id="wheelHost"></div></div>
+      <div class="wheel-legend">
+        <span class="lg-str"><i></i>Your fire &mdash; strongest spoke</span>
+        <span class="lg-gap"><i></i>Your gap &mdash; shortest spoke</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="res-section" style="padding-top:0">
+    <div class="wrap">
+      <div class="res-label">The Reading</div>
+      <h3 class="res-h">WHERE THE WORK IS</h3>
+      <div class="diag" id="gapBox">
+        <div class="diag-k">Your gap · the spoke costing you most</div>
+        <div class="diag-name" id="gapName"></div>
+        <div class="diag-body" id="gapBody"></div>
+      </div>
+      <div class="diag strength" id="strBox">
+        <div class="diag-k">Your fire · where you already stand</div>
+        <div class="diag-name" id="strName"></div>
+        <div class="diag-body" id="strBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="cta">
+      <img class="flame" src="assets/img/img-71181a8c48.png" alt="" loading="lazy" decoding="async">
+      <span class="eyebrow cta-eye">The next move</span>
+      <h3 class="cta-h">BOOK A CALL WITH KYLE</h3>
+      <p class="cta-p">One conversation. Direct, embodied, no throat-clearing. We take your shortest spoke &mdash; <b id="ctaGap" style="color:var(--ember-light);font-weight:700"></b> &mdash; and find the single edge that, if you met it, brings the whole wheel back into round.</p>
+      <ul class="cta-list">
+        <li>A clear read on where you actually stand as a man right now</li>
+        <li>The one spoke draining the most energy, time, and self-respect</li>
+        <li>The first edge to meet &mdash; and what it costs to keep avoiding it</li>
+        <li>Whether The Forge is the right fire for you</li>
+      </ul>
+      <a class="btn" id="bookBtn" href="#" target="_blank" rel="noopener">Book your call</a>
+      <p class="cta-close">&ldquo;A man who can stand in fire. A man who keeps his word.&rdquo;<br>&mdash; Kyle</p>
+    </div>
+  </div>
+
+  <div class="res-foot">
+    <button class="restart" onclick="restart()">&#8635; Retake the wheel</button>
+  </div>
+</section>
+
+<script>
+
+/* ---- CONFIG: replace with Kyle's real booking link ---- */
+var BOOKING_URL = "https://calendly.com/your-link"; // TODO: set this
+
+/* 3 qualifying questions, asked BEFORE the wheel. Single-select.
+   qualAnswers[i] holds the chosen option text — send these to your CRM
+   alongside name/email so you know the fit before the call. */
+var QUALIFIERS = [
+  { q:"When you already know something in your life needs to change, what usually happens?",
+    opts:[
+      "I move on it \u2014 I don\u2019t sit in it long",
+      "I start strong, then stall out",
+      "I know exactly what it is, and I avoid it",
+      "I\u2019ve been circling the same thing for years" ] },
+  { q:"Which is closest to where you actually stand right now?",
+    opts:[
+      "Successful on paper, hollow underneath",
+      "Stuck or plateaued \u2014 I can\u2019t break through",
+      "In a hard season \u2014 burnout, loss, a marriage on the edge",
+      "Doing fine, but I know I\u2019m built for more" ] },
+  { q:"If the right guide and the right work were in front of you, are you ready to commit?",
+    opts:[
+      "Yes \u2014 I\u2019m done waiting",
+      "Yes, if it\u2019s the right fit for me",
+      "I\u2019m exploring, not decided yet",
+      "Honestly, not sure I have the space right now" ] }
+];
+
+/* The Wheel of Life \u2014 8 areas, each with 2 statements (rated 1\u20135).
+   Grouped into 4 steps of 2 areas for pacing. */
+var AREAS = [
+ { name:"Body & Vitality", label:"BODY",
+   frame:"The body is the first thing you lead. Everything else runs through it.",
+   q:["My body has the energy, strength, and sleep to meet my life \u2014 not just survive it.",
+      "I train and fuel my body on purpose, not on whatever\u2019s left over."],
+   gap:"Your body is running on fumes, and every other area is quietly paying the tax. Energy, clarity, presence, discipline \u2014 they all draw from this same well, and right now it\u2019s low. This is the base layer. Rebuild it and everything above it gets easier.",
+   str:"Your body is a foundation, not a liability. The energy and discipline you\u2019ve built here is the engine the rest of your life runs on." },
+ { name:"Purpose & Work", label:"PURPOSE",
+   frame:"A man needs work that\u2019s his \u2014 not just a job that has him.",
+   q:["My work is aligned with something I actually care about, not just a paycheck.",
+      "I know what I\u2019m building and why it matters."],
+   gap:"You\u2019re pouring yourself into something that isn\u2019t yours. There\u2019s no fire in it, so it costs more than it gives back. A man without a mission he owns eventually goes numb \u2014 that\u2019s the real risk here.",
+   str:"You know what you\u2019re for. Your work has meaning behind it, and that clarity of mission is rarer than any skill \u2014 it pulls the rest of your life into line." },
+ { name:"Money & Provision", label:"MONEY",
+   frame:"Money isn\u2019t the point. But a man who can\u2019t provide isn\u2019t free.",
+   q:["My finances are stable enough that money isn\u2019t quietly running my decisions.",
+      "I feel capable and grounded as a provider, not anxious or avoidant about it."],
+   gap:"Money is quietly running you. The anxiety or avoidance here leaks into every other room \u2014 how you show up at home, the risks you won\u2019t take, the sleep you don\u2019t get. Sovereignty starts with not being owned, and right now money owns a piece of you.",
+   str:"You\u2019ve built ground under your feet. Money isn\u2019t driving your decisions from the shadows \u2014 and that stability frees you to lead everywhere else." },
+ { name:"Love & Intimacy", label:"LOVE",
+   frame:"The way you love is the truest test of the man you\u2019ve become.",
+   q:["I\u2019m present, open, and honest in my intimate relationship \u2014 not guarded or checked out.",
+      "The love in my life feels alive and chosen, not just familiar or dutiful."],
+   gap:"You\u2019ve gone quiet where it matters most. Guarded, checked out, or just going through the motions \u2014 the intimacy has flattened. This is often the last place a man lets himself feel the cost, and the first place the work needs to land.",
+   str:"You show up in love with your chest open. Present, honest, chosen \u2014 that willingness to be seen up close is a mark of real strength, not softness." },
+ { name:"Family & Home", label:"FAMILY",
+   frame:"Home is where your character is either built or exposed.",
+   q:["I\u2019m the man I want to be inside my own home \u2014 with my family, my kids, my closest people.",
+      "My home life feels grounded and connected, not tense, distant, or on autopilot."],
+   gap:"The man the world sees isn\u2019t always the one your family gets. Home is where the gap between your image and your character shows \u2014 and right now there\u2019s tension, distance, or autopilot running the place that should be your ground.",
+   str:"You\u2019re the same man at home as anywhere else. Grounded, present, connected \u2014 your family gets your best, not your leftovers. That integrity is the whole point." },
+ { name:"Brotherhood", label:"BROTHERS",
+   frame:"A man with no brothers is a man with no witnesses.",
+   q:["I have men in my life who truly know me, challenge me, and won\u2019t flinch at the truth.",
+      "I show up as a brother to other men \u2014 not just waiting for them to show up for me."],
+   gap:"You\u2019re carrying it alone. No council, no witnesses, no men who can call you on your edges \u2014 and a man alone drifts without noticing. This is the loneliest gap most men won\u2019t admit to, and the one brotherhood exists to close.",
+   str:"You don\u2019t stand alone. You\u2019re witnessed, challenged, and held by real men \u2014 and you hold them back. That brotherhood is what keeps a man honest under pressure." },
+ { name:"Inner Ground", label:"INNER GROUND",
+   frame:"Underneath everything is the ground you stand on when no one\u2019s watching.",
+   q:["There\u2019s space between my urge and my action \u2014 I don\u2019t get run by every impulse or emotion.",
+      "I have an inner life \u2014 stillness, faith, or practice \u2014 that steadies me when things get loud."],
+   gap:"There\u2019s no still center yet. When pressure comes, you get run \u2014 by impulse, emotion, reaction \u2014 because there\u2019s nothing underneath holding you steady. Every other area shakes when this one is empty. This is the deepest work, and the most freeing.",
+   str:"You have a floor beneath the noise. Space between impulse and action, a practice that steadies you \u2014 that inner ground is what lets you stay sovereign when everything gets loud." },
+ { name:"Play & Freedom", label:"FREEDOM",
+   frame:"A man who can\u2019t play has forgotten why he\u2019s fighting.",
+   q:["There\u2019s genuine aliveness, play, and adventure in my life \u2014 not just duty and grind.",
+      "I make real space for what lights me up, without guilt."],
+   gap:"You\u2019ve traded aliveness for grind. All duty, no play \u2014 and a man who can\u2019t feel joy eventually forgets what he\u2019s working for. It looks like the least important spoke; it\u2019s often the one holding the whole wheel back from turning.",
+   str:"You still know how to be alive. Play, adventure, the things that light you up \u2014 you protect that, and it\u2019s what keeps the discipline from curdling into grind." }
+];
+
+/* 4 steps, 2 areas each (indices into AREAS) */
+var STEPS = [ [0,1], [2,3], [4,5], [6,7] ];
+var STEP_LINE = [
+  "Rate each line for how true it is \u2014 not how it should be. How it is.",
+  "Keep going. The truth you skip is the spoke that stays short.",
+  "These are the ones most men flinch at. Stay honest.",
+  "Last two. Then you\u2019ll see the whole wheel."
+];
+
+var TIERS = [
+  {min:80, word:"WHOLE",      read:"The wheel runs true. Your life is integrated across the spokes \u2014 the work now is depth and transmission, not repair."},
+  {min:62, word:"TURNING",    read:"The wheel is rolling, but it\u2019s out of round. One or two spokes are short, and you feel the wobble in everything else."},
+  {min:44, word:"UNEVEN",     read:"Some spokes are strong, others are barely there. The wheel can\u2019t carry real weight until the short ones come up."},
+  {min:0,  word:"SEIZED",     read:"Right now the wheel is buckled. A few areas are dragging the whole life to a stop. The honest news: every spoke can be rebuilt."}
+];
+
+var qualAnswers = [];         // index -> chosen option text
+var answers = {};             // "area_stmt" -> 1..5
+var cur = 0;                  // current wheel step (0..3)
+
+function go(id){
+  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});
+  document.getElementById(id).classList.add('active');
+}
+
+/* ---------- QUALIFY ---------- */
+function startQualify(){ go('qualify'); renderQual(); window.scrollTo(0,0); }
+function renderQual(){
+  var html='';
+  QUALIFIERS.forEach(function(item,qi){
+    html+='<div class="qual-q"><div class="qual-lead">'+String.fromCharCode(65+qi)+'</div>'+
+          '<div class="qual-text">'+item.q+'</div><div class="qopts">';
+    item.opts.forEach(function(opt,oi){
+      var sel = qualAnswers[qi]===oi ? ' sel' : '';
+      html+='<button class="qopt'+sel+'" onclick="pickQual('+qi+','+oi+',this)"><span class="dot"></span>'+opt+'</button>';
+    });
+    html+='</div></div>';
+  });
+  document.getElementById('qualList').innerHTML=html;
+  document.getElementById('qualNudge').classList.remove('show');
+}
+function pickQual(qi,oi,el){
+  qualAnswers[qi]=oi;
+  var parent=el.parentNode;
+  parent.querySelectorAll('.qopt').forEach(function(o){o.classList.remove('sel')});
+  el.classList.add('sel');
+  document.getElementById('qualNudge').classList.remove('show');
+}
+function submitQualify(){
+  for(var i=0;i<QUALIFIERS.length;i++){ if(qualAnswers[i]===undefined){ document.getElementById('qualNudge').classList.add('show'); return; } }
+  go('audit'); renderStep(); window.scrollTo(0,0);
+}
+
+/* ---------- WHEEL ASSESSMENT ---------- */
+function renderStep(){
+  var pair=STEPS[cur];
+  document.getElementById('phaseNum').textContent="PART 0"+(cur+1);
+  document.getElementById('phaseName').textContent="THE WHEEL";
+  document.getElementById('phaseLine').textContent="\u201C"+STEP_LINE[cur]+"\u201D";
+  document.getElementById('phaseSub').textContent="Two areas of your life. Four statements. Answer as you are today.";
+  document.getElementById('tbCount').textContent="PART "+(cur+1)+" OF 4";
+  document.getElementById('backBtn').style.visibility = cur===0 ? 'hidden':'visible';
+  document.getElementById('backBtn').textContent = cur===0 ? '' : '\u2190 Back';
+  document.getElementById('nextBtn').textContent = cur===3 ? 'See my wheel' : 'Continue';
+
+  var steps=document.querySelectorAll('#ascent .step');
+  steps.forEach(function(s,i){ s.classList.remove('done','cur'); if(i<cur)s.classList.add('done'); if(i===cur)s.classList.add('cur'); });
+
+  var html='';
+  pair.forEach(function(ai){
+    var a=AREAS[ai];
+    html+='<div class="area-head"><div class="area-k">The Spoke</div><div class="area-name">'+a.name+'</div><div class="area-frame">\u201C'+a.frame+'\u201D</div></div>';
+    a.q.forEach(function(text,si){
+      var key=ai+'_'+si, sel=answers[key];
+      html+='<div class="q tight"><div class="q-text">'+text+'</div><div class="scale">';
+      for(var v=1;v<=5;v++){ html+='<button class="opt'+(sel===v?' sel':'')+'" onclick="pick('+ai+','+si+','+v+',this)">'+v+'</button>'; }
+      html+='</div><div class="scale-labels"><span>Not me</span><span>Deeply true</span></div></div>';
+    });
+  });
+  document.getElementById('qList').innerHTML=html;
+  document.getElementById('nudge').classList.remove('show');
+  window.scrollTo({top:0,behavior:'auto'});
+}
+function pick(ai,si,v,el){
+  answers[ai+'_'+si]=v;
+  var parent=el.parentNode;
+  parent.querySelectorAll('.opt').forEach(function(o){o.classList.remove('sel')});
+  el.classList.add('sel');
+  document.getElementById('nudge').classList.remove('show');
+}
+function stepComplete(){
+  var pair=STEPS[cur];
+  for(var j=0;j<pair.length;j++){ var ai=pair[j];
+    for(var si=0;si<AREAS[ai].q.length;si++){ if(!answers[ai+'_'+si]) return false; } }
+  return true;
+}
+function nextPhase(){
+  if(!stepComplete()){ document.getElementById('nudge').classList.add('show'); return; }
+  if(cur<3){ cur++; renderStep(); } else { go('gate'); window.scrollTo(0,0); }
+}
+function prevPhase(){ if(cur>0){ cur--; renderStep(); } }
+
+/* ---------- GATE ---------- */
+function reveal(){
+  var name=document.getElementById('fname').value.trim();
+  var email=document.getElementById('email').value.trim();
+  var err=document.getElementById('gateErr');
+  if(!name){ err.textContent="Enter your name to continue."; return; }
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Enter a valid email to unlock your wheel."; return; }
+  err.textContent="";
+  /* NOTE: lead is held in the page only. Wire name/email + qualAnswers to your CRM here. */
+  computeAndShow(name);
+}
+
+/* ---------- WHEEL SVG ---------- */
+function buildWheel(scores, minI, maxI){
+  var cx=180, cy=180, maxR=118, n=scores.length, i, ang, rad, r, x, y;
+  function pt(idx, frac){ ang=-90+idx*(360/n); rad=ang*Math.PI/180; return [cx+Math.cos(rad)*maxR*frac, cy+Math.sin(rad)*maxR*frac]; }
+  var svg='<svg id="wheelSvg" viewBox="0 0 360 360" role="img" aria-label="Your Wheel of Life">';
+  // guide rings
+  [0.25,0.5,0.75,1].forEach(function(f){
+    var pts=''; for(i=0;i<n;i++){ var p=pt(i,f); pts+=(i?' ':'')+p[0].toFixed(1)+','+p[1].toFixed(1); }
+    svg+='<polygon points="'+pts+'" fill="none" stroke="rgba(155,123,62,'+(f===1?0.42:0.20)+')" stroke-width="1"/>';
+  });
+  // axes
+  for(i=0;i<n;i++){ var e=pt(i,1); svg+='<line x1="180" y1="180" x2="'+e[0].toFixed(1)+'" y2="'+e[1].toFixed(1)+'" stroke="rgba(155,123,62,.16)" stroke-width="1"/>'; }
+  // labels
+  for(i=0;i<n;i++){
+    ang=-90+i*(360/n); rad=ang*Math.PI/180;
+    var lx=cx+Math.cos(rad)*(maxR+18), ly=cy+Math.sin(rad)*(maxR+18);
+    var c=Math.cos(rad), anchor = c>0.3?'start':(c<-0.3?'end':'middle');
+    var dy = Math.sin(rad)<-0.5? -4 : (Math.sin(rad)>0.5? 12 : 4);
+    var col = i===minI?'#C9A668':(i===maxI?'#C9583E':'#9a9284');
+    svg+='<text x="'+lx.toFixed(1)+'" y="'+(ly+dy).toFixed(1)+'" text-anchor="'+anchor+'" font-family="Cinzel,serif" font-weight="700" font-size="10.5" letter-spacing="1.4" fill="'+col+'">'+AREAS[i].label+'</text>';
+    svg+='<text x="'+lx.toFixed(1)+'" y="'+(ly+dy+13).toFixed(1)+'" text-anchor="'+anchor+'" font-family="Cinzel,serif" font-weight="600" font-size="9" fill="#857E70">'+scores[i]+'%</text>';
+  }
+  // data polygon + dots (animated group)
+  var dpts='';
+  for(i=0;i<n;i++){ var d=pt(i,scores[i]/100); dpts+=(i?' ':'')+d[0].toFixed(1)+','+d[1].toFixed(1); }
+  svg+='<g class="wheel-data">';
+  svg+='<polygon points="'+dpts+'" fill="rgba(201,88,62,.26)" stroke="#C9583E" stroke-width="2" stroke-linejoin="round"/>';
+  for(i=0;i<n;i++){ var d2=pt(i,scores[i]/100);
+    if(i===minI){ svg+='<circle cx="'+d2[0].toFixed(1)+'" cy="'+d2[1].toFixed(1)+'" r="6" fill="#9B7B3E" stroke="#F2EBDC" stroke-width="1.5"/>'; }
+    else if(i===maxI){ svg+='<circle cx="'+d2[0].toFixed(1)+'" cy="'+d2[1].toFixed(1)+'" r="6" fill="#C9583E" stroke="#F2EBDC" stroke-width="1.5"/>'; }
+    else { svg+='<circle cx="'+d2[0].toFixed(1)+'" cy="'+d2[1].toFixed(1)+'" r="3.4" fill="#C9583E"/>'; }
+  }
+  svg+='</g></svg>';
+  return svg;
+}
+
+/* ---------- RESULTS ---------- */
+function computeAndShow(name){
+  var scores=AREAS.map(function(a,ai){
+    var sum=0; a.q.forEach(function(_,si){ sum+=answers[ai+'_'+si]||0; });
+    return Math.round((sum/(a.q.length*5))*100);
+  });
+  var overall=Math.round(scores.reduce(function(x,y){return x+y},0)/scores.length);
+
+  var tier=TIERS.find(function(t){return overall>=t.min;});
+  document.getElementById('greet').textContent="Here\u2019s your wheel, "+name+".";
+  document.getElementById('tierWord').textContent=tier.word;
+  document.getElementById('tierRead').textContent="\u201C"+tier.read+"\u201D";
+
+  var minI=0,maxI=0;
+  scores.forEach(function(s,i){ if(s<scores[minI])minI=i; if(s>scores[maxI])maxI=i; });
+  if(minI===maxI){ maxI = (minI===0?1:0); }
+
+  document.getElementById('wheelHost').innerHTML=buildWheel(scores,minI,maxI);
+
+  document.getElementById('gapName').textContent=AREAS[minI].name+"  \u00B7  "+scores[minI]+"%";
+  document.getElementById('gapBody').textContent=AREAS[minI].gap;
+  document.getElementById('strName').textContent=AREAS[maxI].name+"  \u00B7  "+scores[maxI]+"%";
+  document.getElementById('strBody').textContent=AREAS[maxI].str;
+  document.getElementById('ctaGap').textContent=AREAS[minI].name;
+  document.getElementById('bookBtn').href=BOOKING_URL;
+
+  go('results'); window.scrollTo(0,0);
+  var big=document.getElementById('scoreBig'), n2=0;
+  var iv=setInterval(function(){ n2+=Math.max(1,Math.round(overall/28)); if(n2>=overall){n2=overall;clearInterval(iv);} big.innerHTML=n2+'<span>%</span>'; },28);
+  setTimeout(function(){ var sv=document.getElementById('wheelSvg'); if(sv) sv.classList.add('in'); },260);
+}
+
+function restart(){
+  qualAnswers=[]; answers={}; cur=0;
+  document.getElementById('fname').value=''; document.getElementById('email').value='';
+  go('hero'); window.scrollTo(0,0);
+}
+
+</script>
+</body>
+</html>

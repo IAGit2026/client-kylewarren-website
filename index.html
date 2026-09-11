@@ -991,6 +991,10 @@
       <label for="faPhone">Phone <span style="color:var(--stone);letter-spacing:.1em">(optional)</span></label>
       <input id="faPhone" type="tel" placeholder="(555) 555 5555" autocomplete="tel">
     </div>
+    <div class="fa-f">
+      <label for="faHandle">Social handle <span style="color:var(--stone);letter-spacing:.1em">(optional)</span></label>
+      <input id="faHandle" type="text" placeholder="@yourhandle" autocomplete="off">
+    </div>
     <div class="fa-err" id="faErr"></div>
     <button class="btn btn-primary" onclick="submitFireAudit()">Start the audit</button>
     <p class="fa-note">No spam. Your score and the occasional note from Kyle. Unsubscribe any time.</p>
@@ -1005,7 +1009,7 @@
    a Zapier catch hook, etc). Leave it blank and the popup still works,
    it just will not send the lead anywhere.
    ===================================================================== */
-var FA_ENDPOINT = "https://services.leadconnectorhq.com/hooks/f3luAybuQTM6j6gDRzty/webhook-trigger/486e9bdf-b3d7-4308-a501-b4855060d375"; // GHL Inbound Webhook (KW Initiations)
+var FA_ENDPOINT = ""; // TODO: paste your form endpoint URL here
 var FA_AUDIT_URL = "fire-audit.html";
 
 function openFireAudit(e){
@@ -1031,6 +1035,7 @@ function submitFireAudit(){
   var name=document.getElementById('faName').value.trim();
   var email=document.getElementById('faEmail').value.trim();
   var phone=document.getElementById('faPhone').value.trim();
+  var handle=document.getElementById('faHandle').value.trim();
   var err=document.getElementById('faErr');
   if(!name){ err.textContent="Enter your first name to begin."; return; }
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Enter a valid email so we can send your score."; return; }
@@ -1038,11 +1043,12 @@ function submitFireAudit(){
   if(FA_ENDPOINT){
     try{
       fetch(FA_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({source:"Fire Audit popup",name:name,email:email,phone:phone})});
+        body:JSON.stringify({source:"Fire Audit popup",name:name,email:email,phone:phone,handle:handle})});
     }catch(e){}
   }
   window.location.href = FA_AUDIT_URL+"?name="+encodeURIComponent(name)+
-    "&email="+encodeURIComponent(email)+"&phone="+encodeURIComponent(phone);
+    "&email="+encodeURIComponent(email)+"&phone="+encodeURIComponent(phone)+
+    "&handle="+encodeURIComponent(handle);
 }
 
 /* Open once per visit: after 30 seconds, or the moment the cursor

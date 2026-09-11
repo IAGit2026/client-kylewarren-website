@@ -286,6 +286,10 @@
       <label for="phone">Phone <span style="color:var(--stone);letter-spacing:.1em">(optional)</span></label>
       <input id="phone" type="tel" placeholder="(555) 555 5555" autocomplete="tel">
     </div>
+    <div class="field">
+      <label for="handle">Social handle <span style="color:var(--stone);letter-spacing:.1em">(optional)</span></label>
+      <input id="handle" type="text" placeholder="@yourhandle" autocomplete="off">
+    </div>
     <div class="err" id="gateErr"></div>
     <button class="btn" style="width:100%;margin-top:8px" onclick="reveal()">Reveal my score</button>
     <p class="gate-note">No spam. Your results and the occasional note from Kyle. Unsubscribe any time.</p>
@@ -365,7 +369,7 @@
    Kit, Mailchimp, Zapier catch hook, etc). Leave it blank and the audit
    still works, it just will not send the lead anywhere.
    ======================================================================= */
-var FORM_ENDPOINT = "https://services.leadconnectorhq.com/hooks/f3luAybuQTM6j6gDRzty/webhook-trigger/486e9bdf-b3d7-4308-a501-b4855060d375"; // GHL Inbound Webhook (KW Initiations)
+var FORM_ENDPOINT = ""; // TODO: paste your form endpoint URL here
 
 var AREAS = [
  { name:"Body & Vitality", label:"BODY",
@@ -503,7 +507,7 @@ function prevPhase(){ if(cur>0){ cur--; renderStep(); } }
 /* read name/email handed over from the landing page popup */
 function prefill(){
   var p=new URLSearchParams(window.location.search);
-  return { name:(p.get('name')||'').trim(), email:(p.get('email')||'').trim(), phone:(p.get('phone')||'').trim() };
+  return { name:(p.get('name')||'').trim(), email:(p.get('email')||'').trim(), phone:(p.get('phone')||'').trim(), handle:(p.get('handle')||'').trim() };
 }
 
 function sendLead(data){
@@ -517,11 +521,12 @@ function reveal(){
   var name=document.getElementById('fname').value.trim();
   var email=document.getElementById('email').value.trim();
   var phone=document.getElementById('phone').value.trim();
+  var handle=document.getElementById('handle').value.trim();
   var err=document.getElementById('gateErr');
   if(!name){ err.textContent="Enter your name to continue."; return; }
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Enter a valid email to unlock your score."; return; }
   err.textContent="";
-  sendLead({source:"Fire Audit", name:name, email:email, phone:phone});
+  sendLead({source:"Fire Audit", name:name, email:email, phone:phone, handle:handle});
   computeAndShow(name);
 }
 
@@ -598,7 +603,7 @@ function computeAndShow(name){
 
 function restart(){
   answers={}; cur=0;
-  document.getElementById('fname').value=''; document.getElementById('email').value=''; document.getElementById('phone').value='';
+  document.getElementById('fname').value=''; document.getElementById('email').value=''; document.getElementById('phone').value=''; document.getElementById('handle').value='';
   go('hero'); window.scrollTo(0,0);
 }
 
@@ -609,6 +614,7 @@ function restart(){
     document.getElementById('fname').value=p.name;
     document.getElementById('email').value=p.email;
     document.getElementById('phone').value=p.phone;
+    document.getElementById('handle').value=p.handle;
     startAudit();
   }
 })();

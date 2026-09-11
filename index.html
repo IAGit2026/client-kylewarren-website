@@ -1043,7 +1043,7 @@ function submitFireAudit(){
   if(FA_ENDPOINT){
     try{
       fetch(FA_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({source:"Fire Audit popup",name:name,email:email,phone:phone,handle:handle})});
+        body:JSON.stringify({source:"Fire Audit popup",event:"audit_started",name:name,email:email,phone:phone,handle:handle})});
     }catch(e){}
   }
   window.location.href = FA_AUDIT_URL+"?name="+encodeURIComponent(name)+

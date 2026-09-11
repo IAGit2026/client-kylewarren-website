@@ -526,7 +526,8 @@ function reveal(){
   if(!name){ err.textContent="Enter your name to continue."; return; }
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Enter a valid email to unlock your score."; return; }
   err.textContent="";
-  sendLead({source:"Fire Audit", name:name, email:email, phone:phone, handle:handle});
+  window.__lead = {name:name, email:email, phone:phone, handle:handle};
+  sendLead({source:"Fire Audit", event:"audit_started", name:name, email:email, phone:phone, handle:handle});
   computeAndShow(name);
 }
 
@@ -594,6 +595,25 @@ function computeAndShow(name){
         '<div class="focus-do"><b>Put your intention here</b>'+a.focus+'</div></li>';
   });
   document.getElementById('focusList').innerHTML=fh;
+
+  /* fire audit_completed with the full score payload for the CRM/email merge fields */
+  var lead = window.__lead || {};
+  sendLead({
+    source:"Fire Audit",
+    event:"audit_completed",
+    name: lead.name || name,
+    email: lead.email || "",
+    phone: lead.phone || "",
+    handle: lead.handle || "",
+    fire_score: overall,
+    fire_tier: tier.word,
+    fire_tier_reading: tier.read,
+    top_area: AREAS[maxI].name,
+    top_score: scores[maxI],
+    low_area: AREAS[minI].name,
+    low_score: scores[minI],
+    results_link: "https://kwinitiations.com/fire-audit.html"
+  });
 
   go('results'); window.scrollTo(0,0);
   var big=document.getElementById('scoreBig'), n2=0;

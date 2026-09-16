@@ -498,7 +498,14 @@ function nextPhase(){
   if(cur<3){ cur++; renderStep(); }
   else {
     var pre = prefill();
-    if(pre.email && pre.name){ computeAndShow(pre.name); }
+    if(pre.email && pre.name){
+      window.__lead = {name:pre.name, email:pre.email, phone:pre.phone, handle:pre.handle};
+      var fn=document.getElementById('fname'); if(fn) fn.value=pre.name;
+      var em=document.getElementById('email'); if(em) em.value=pre.email;
+      var ph=document.getElementById('phone'); if(ph) ph.value=pre.phone;
+      var hd=document.getElementById('handle'); if(hd) hd.value=pre.handle;
+      computeAndShow(pre.name);
+    }
     else { go('gate'); window.scrollTo(0,0); }
   }
 }
@@ -598,13 +605,14 @@ function computeAndShow(name){
 
   /* fire audit_completed with the full score payload for the CRM/email merge fields */
   var lead = window.__lead || {};
+  var gv=function(id){ var el=document.getElementById(id); return el?el.value.trim():''; };
   sendLead({
     source:"Fire Audit",
     event:"audit_completed",
-    name: lead.name || name,
-    email: lead.email || "",
-    phone: lead.phone || "",
-    handle: lead.handle || "",
+    name: lead.name || name || gv('fname'),
+    email: lead.email || gv('email'),
+    phone: lead.phone || gv('phone'),
+    handle: lead.handle || gv('handle'),
     fire_score: overall,
     fire_tier: tier.word,
     fire_tier_reading: tier.read,
@@ -635,6 +643,7 @@ function restart(){
     document.getElementById('email').value=p.email;
     document.getElementById('phone').value=p.phone;
     document.getElementById('handle').value=p.handle;
+    window.__lead = {name:p.name, email:p.email, phone:p.phone, handle:p.handle};
     startAudit();
   }
 })();

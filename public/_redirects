@@ -1,0 +1,8 @@
+# Old static-site URLs -> new routes (Cloudflare Pages). Query strings are kept.
+/index.html          /               301
+/fire-audit.html     /fire-audit     301
+/forged.html         /forged         301
+/iron-and-fire.html  /iron-and-fire  301
+/the-forge.html      /the-forge      301
+/the-hearth.html     /the-hearth     301
+/the-threshold.html  /the-threshold  301

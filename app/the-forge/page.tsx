@@ -30,7 +30,7 @@ export default function TheForgePage() {
               <a href="/#offers">Offers</a>
               <a href="/#proof">Stories</a>
               <a href="/fire-audit" className="nav-audit">Take the Audit</a>
-              <a href="mailto:info@kwinitiations.com?subject=The%20Forge%20Application" className="nav-cta">Apply Now</a>
+              <a href="https://api.leadconnectorhq.com/widget/bookings/30-minute-discovery-call-kw-initiations" className="nav-cta">Apply Now</a>
             </nav>
           </div>
         </header>
@@ -40,7 +40,7 @@ export default function TheForgePage() {
             <h1>Become the man who can <em>stand in fire.</em></h1>
             <p className="fg-sub">The Forge is a sixteen-week initiation: four phases, eight tools, one brotherhood. Awareness, Foundation, Momentum, Lead. This is not self-improvement. It is a forge. The man who finishes is not the man who started.</p>
             <div className="fg-cta">
-              <a href="mailto:info@kwinitiations.com?subject=The%20Forge%20Application" className="btn btn-primary">Apply Now</a>
+              <a href="https://api.leadconnectorhq.com/widget/bookings/30-minute-discovery-call-kw-initiations" className="btn btn-primary">Apply Now</a>
               <a href="#phases" className="btn btn-ghost on-dark">See the four phases</a>
             </div>
             <p className="fg-tag">“The man who finishes is not the man who started.”</p>
@@ -77,7 +77,7 @@ export default function TheForgePage() {
             <div className="fg-head"><span className="fg-eyebrow">The journey</span><h2>Four phases of fire</h2>
               <p>Each week inside a phase holds three movements: an intention, an activation, and integration.</p></div>
             <div className="fg-phase"><div className="fg-num">I</div><div><span className="fg-pmonth">Month One</span><div className="fg-pname">Awareness</div><p className="fg-pq">“Before a man can stand, he has to see where he’s standing.”</p><p className="d">The audit. We don’t fix anything yet. We name what is. The leaks, the lies, the loops, the vices. Awareness is the first fire; it burns nothing but illusion.</p></div></div><div className="fg-phase"><div className="fg-num">II</div><div><span className="fg-pmonth">Month Two</span><div className="fg-pname">Foundation</div><p className="fg-pq">“What you do daily is what you become.”</p><p className="d">The build. We lay the daily and weekly architecture that holds the man you’re becoming. Disciplines, not perfection. Calendar, not chaos. A 90-day map you can actually walk.</p></div></div><div className="fg-phase"><div className="fg-num">III</div><div><span className="fg-pmonth">Month Three</span><div className="fg-pname">Momentum</div><p className="fg-pq">“Momentum is what discipline becomes when you stop negotiating with it.”</p><p className="d">Where the work starts to carry you. The disciplines become habit, the edges get met on purpose, and resistance stops running the show.</p></div></div><div className="fg-phase"><div className="fg-num">IV</div><div><span className="fg-pmonth">Month Four</span><div className="fg-pname">Lead</div><p className="fg-pq">“A man who has done the work owes the work to the men coming behind him.”</p><p className="d">The turn outward. What you’ve become must serve something larger: family, brotherhood, mission. This phase is transmission.</p></div></div>
-            <div className="fg-cta-row reveal"><p className="sub">Four phases. Sixteen weeks. One man on the other side.</p><a href="mailto:info@kwinitiations.com?subject=The%20Forge%20Application" className="btn btn-primary">Apply Now</a></div>
+            <div className="fg-cta-row reveal"><p className="sub">Four phases. Sixteen weeks. One man on the other side.</p><a href="https://api.leadconnectorhq.com/widget/bookings/30-minute-discovery-call-kw-initiations" className="btn btn-primary">Apply Now</a></div>
           </div>
         </section>
         <section className="fg-sec fg-alt">
@@ -94,7 +94,7 @@ export default function TheForgePage() {
               <div className="fg-tool"><div className="tn"><span className="tnum">VII</span><h3>Prayer</h3></div><p className="td">Whatever surrender looks like for you: asking, offering, listening. No dogma required.</p><div className="tb"><b>The benefit</b>You stop white-knuckling everything. Control loosens its grip, purpose sharpens, and you carry a steadiness that doesn’t depend on things going your way.</div><div className="tarc">Surrender control → Align with purpose → Transmit intention</div></div>
               <div className="fg-tool"><div className="tn"><span className="tnum">VIII</span><h3>Body</h3></div><p className="td">Strength, cold, movement, sleep and food treated as practice rather than vanity.</p><div className="tb"><b>The benefit</b>Numbness breaks. You build real physical capacity and a sense of safety in your own frame, and you carry an authority men feel before you say a word.</div><div className="tarc">Interrupt numbness → Build safety → Express strength → Embody authority</div></div>
             </div>
-            <div className="fg-cta-row reveal"><p className="sub">Eight tools you will actually own by week sixteen.</p><a href="mailto:info@kwinitiations.com?subject=The%20Forge%20Application" className="btn btn-primary">Apply Now</a></div>
+            <div className="fg-cta-row reveal"><p className="sub">Eight tools you will actually own by week sixteen.</p><a href="https://api.leadconnectorhq.com/widget/bookings/30-minute-discovery-call-kw-initiations" className="btn btn-primary">Apply Now</a></div>
           </div>
         </section>
         <section className="fg-sec">
@@ -120,7 +120,7 @@ export default function TheForgePage() {
               <li><b>The 90-day map</b>A concrete plan of disciplines you actually walk, not a wish list.</li>
               <li><b>The vow</b>You close the forge with a line you draw and refuse to cross.</li>
             </ul>
-            <div className="fg-cta-row reveal"><p className="sub">Everything above, for one cohort of men at a time.</p><a href="mailto:info@kwinitiations.com?subject=The%20Forge%20Application" className="btn btn-primary">Apply Now</a></div>
+            <div className="fg-cta-row reveal"><p className="sub">Everything above, for one cohort of men at a time.</p><a href="https://api.leadconnectorhq.com/widget/bookings/30-minute-discovery-call-kw-initiations" className="btn btn-primary">Apply Now</a></div>
           </div>
         </section>
         <section className="fg-sec">
@@ -134,7 +134,7 @@ export default function TheForgePage() {
               <li>You’re willing to meet the edge you’ve been avoiding</li>
               <li>You want to be forged, not entertained</li>
             </ul>
-            <div className="fg-cta-row reveal"><p className="sub">If you read that list and something in you said yes, apply.</p><a href="mailto:info@kwinitiations.com?subject=The%20Forge%20Application" className="btn btn-primary">Apply Now</a></div>
+            <div className="fg-cta-row reveal"><p className="sub">If you read that list and something in you said yes, apply.</p><a href="https://api.leadconnectorhq.com/widget/bookings/30-minute-discovery-call-kw-initiations" className="btn btn-primary">Apply Now</a></div>
           </div>
         </section>
         <section className="fg-vow">
@@ -142,7 +142,7 @@ export default function TheForgePage() {
             <span className="fg-eyebrow">The vow · week sixteen</span>
             <p className="q">“I am a man who can stand in fire. A man who sees God in everything. A man who keeps his word. Clear boundaries. Holds clean, clear space. Resolved within himself. Always looking for his next edge.”</p>
             <p className="by">The Forge closes with your vow</p>
-            <div className="fg-cta-row reveal"><p className="sub">Sixteen weeks from now, that could be your vow.</p><a href="mailto:info@kwinitiations.com?subject=The%20Forge%20Application" className="btn btn-primary">Apply Now</a></div>
+            <div className="fg-cta-row reveal"><p className="sub">Sixteen weeks from now, that could be your vow.</p><a href="https://api.leadconnectorhq.com/widget/bookings/30-minute-discovery-call-kw-initiations" className="btn btn-primary">Apply Now</a></div>
           </div>
         </section>
         <section className="fg-sec">
@@ -180,14 +180,14 @@ export default function TheForgePage() {
             <div className="fg-q"><h4>How much time does it take each week?</h4><p>Enough to change you, not enough to break your life. An intention to read, an activation to do, and integration to journal. The disciplines are built to compound, not overwhelm.</p></div>
             <div className="fg-q"><h4>What if I’m not sure I’m ready?</h4><p>Start with Forged: Men’s Group or a day of Iron and Fire. Meet the work and the men first. The Forge will still be here when the fire has caught.</p></div>
             <div className="fg-q"><h4>Is this therapy?</h4><p>No. It’s initiation: embodied, disciplined, and led. Kyle is a coach and guide, not a therapist, and The Forge is not a substitute for mental-health care.</p></div>
-            <div className="fg-cta-row reveal"><p className="sub">Still reading? That’s usually the answer.</p><a href="mailto:info@kwinitiations.com?subject=The%20Forge%20Application" className="btn btn-primary">Apply Now</a></div>
+            <div className="fg-cta-row reveal"><p className="sub">Still reading? That’s usually the answer.</p><a href="https://api.leadconnectorhq.com/widget/bookings/30-minute-discovery-call-kw-initiations" className="btn btn-primary">Apply Now</a></div>
           </div>
         </section>
         <section className="fg-final">
           <div className="wrap reveal">
             <h2>Step into <em>The Forge.</em></h2>
             <p>Sixteen weeks. The hardest, truest work you’ll do, and you won’t do it alone. If you’re ready to be forged, apply today.</p>
-            <a href="mailto:info@kwinitiations.com?subject=The%20Forge%20Application" className="btn btn-primary">Apply Now</a>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/30-minute-discovery-call-kw-initiations" className="btn btn-primary">Apply Now</a>
             <p className="q">“A man who can stand in fire. A man who keeps his word.”<br />Kyle Warren</p>
           </div>
         </section>

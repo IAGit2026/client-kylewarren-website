@@ -50,7 +50,7 @@ export default function TheHearthPage() {
             <h1>You are never meant to <em>walk alone.</em></h1>
             <p className="hh-sub">The Hearth is a brotherhood of men doing the real work — breath, truth, and the honest check-in — gathered around one fire with Kyle. Walk in as you are. All it asks is your honesty.</p>
             <div className="hh-cta">
-              <a href="https://kwinitiations.com/" target="_blank" rel="noopener" className="btn btn-primary">Join the brotherhood</a>
+              <a href="https://www.meetup.com/forged-mens-group/" target="_blank" rel="noopener" className="btn btn-primary">Join the brotherhood</a>
               <a href="#inside" className="btn btn-ghost">See what’s inside</a>
             </div>
             <div className="mark-rule" style={{margin: '34px auto 0'}}><span className="dot" /><span className="line" /><span className="ring" /><span className="line" /><span className="dot" /></div>
@@ -152,7 +152,7 @@ export default function TheHearthPage() {
           <div className="wrap reveal">
             <h2>Pull up a seat at the fire.</h2>
             <p>The fire’s already lit and the men are already here. You have the capacity to begin right now — and you won’t walk in alone.</p>
-            <a href="https://kwinitiations.com/" target="_blank" rel="noopener" className="btn btn-primary">Join the brotherhood</a>
+            <a href="https://www.meetup.com/forged-mens-group/" target="_blank" rel="noopener" className="btn btn-primary">Join the brotherhood</a>
           </div>
         </section>
         <footer className="footer">

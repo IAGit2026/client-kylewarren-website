@@ -1,0 +1,29 @@
+{
+  "framework": "nextjs",
+  "router": "app",
+  "packageManager": "npm",
+  "nodeVersion": "20",
+  "scripts": {
+    "install": "npm ci",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "build": "next build && node scripts/prepare-cloudflare-output.mjs",
+    "serveStatic": "npm run serve:dist"
+  },
+  "paths": {
+    "app": "src/app",
+    "components": "src/components",
+    "content": "src/content",
+    "lib": "src/lib",
+    "forms": "src/lib/forms",
+    "public": "public",
+    "blog": "src/content/blog",
+    "generation": ".affinity-generation"
+  },
+  "deployment": {
+    "provider": "cloudflare_pages",
+    "mode": "static_export",
+    "outputDirectory": "dist",
+    "runbook": "docs/deploy-cloudflare-pages.md"
+  }
+}

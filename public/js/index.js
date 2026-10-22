@@ -14,7 +14,7 @@ document.querySelectorAll('[data-onclick]').forEach(function(el){el.setAttribute
    it just will not send the lead anywhere.
    ===================================================================== */
 var FA_ENDPOINT = "https://services.leadconnectorhq.com/hooks/f3luAybuQTM6j6gDRzty/webhook-trigger/486e9bdf-b3d7-4308-a501-b4855060d375"; // GHL Inbound Webhook (Fire Audit Lead Capture)
-var FA_AUDIT_URL = "/fire-audit";
+var FA_AUDIT_URL = "/fire-audit/";
 
 function openFireAudit(e){
   if(e) e.preventDefault();

@@ -257,7 +257,7 @@ function computeAndShow(name){
     top_score: scores[maxI],
     low_area: AREAS[minI].name,
     low_score: scores[minI],
-    results_link: "https://kwinitiations.com/fire-audit.html"
+    results_link: "https://kwinitiations.com/fire-audit/"
   });
 
   go('results'); window.scrollTo(0,0);

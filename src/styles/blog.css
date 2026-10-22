@@ -1,0 +1,12 @@
+body { background: var(--paper); color: var(--graphite); font-family: var(--font-body); margin: 0; }
+.blog-shell { max-width: 760px; margin: 0 auto; padding: 64px 20px 96px; }
+.blog-home { font-family: var(--font-display); letter-spacing: .12em; font-size: 13px; color: var(--bronze); text-decoration: none; text-transform: uppercase; }
+.blog-heading { font-family: var(--font-display); color: var(--obsidian); font-size: clamp(32px, 6vw, 48px); margin: 24px 0 32px; }
+.blog-empty, .blog-card-excerpt, .blog-body { font-size: 17px; line-height: 1.7; }
+.blog-list { display: grid; gap: 32px; }
+.blog-card { border-top: 1px solid rgba(155,123,62,.3); padding-top: 24px; }
+.blog-card-title { font-family: var(--font-serif); font-size: 28px; margin: 0 0 8px; }
+.blog-card-title a { color: var(--obsidian); text-decoration: none; }
+.blog-card-date { color: var(--stone); font-size: 14px; margin: 0 0 12px; }
+.blog-card-link, .blog-body a { color: var(--ember); }
+.blog-body img { max-width: 100%; height: auto; }

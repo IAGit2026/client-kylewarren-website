@@ -1,0 +1,5 @@
+# Cloudflare Pages config. `name` must match the Pages project name Paul creates; confirm before first deploy.
+name = "client-kylewarren-website"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
